@@ -16,13 +16,17 @@
 
 package com.example.android.recyclerview;
 
+import com.example.android.common.activities.SampleActivityBase;
 import com.example.android.common.logger.Log;
 
+import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Provide views to RecyclerView with data from mDataSet.
@@ -46,6 +50,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
+                    Intent intent  = new Intent(v.getContext(),ToolsActivity.class);
+                    intent.putExtra("num",getAdapterPosition());
+                    v.getContext().startActivity(intent);
+
                 }
             });
             textView = (TextView) v.findViewById(R.id.textView);

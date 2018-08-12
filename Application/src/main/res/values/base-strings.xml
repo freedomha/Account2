@@ -16,7 +16,7 @@
 -->
 
 <resources>
-    <string name="app_name">RecyclerView</string>
+    <string name="app_name">库存管理</string>
     <string name="intro_message">
         <![CDATA[
         
